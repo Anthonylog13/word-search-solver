@@ -2,7 +2,6 @@
 
 Este proyecto es una solución a la prueba técnica de desarrollo de software, que consiste en una aplicación full-stack para encontrar palabras en una sopa de letras. La aplicación cuenta con un backend en Node.js/Express para la lógica de búsqueda y un frontend interactivo en React.
 
-![Captura de Pantalla de la App](URL_DE_LA_IMAGEN_DE_TU_APP_TERMINADA)
 
 ## ✨ Características
 
