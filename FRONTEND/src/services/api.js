@@ -1,7 +1,9 @@
-const API_BASE_URL = "http://localhost:3001";
+
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '';
 
 export const searchWords = async (matrix, words) => {
     try {
+
         const response = await fetch(`${API_BASE_URL}/api/search`, {
             method: "POST",
             headers: {
