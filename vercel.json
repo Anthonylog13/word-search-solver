@@ -7,7 +7,10 @@
     },
     {
       "src": "FRONTEND/package.json",
-      "use": "@vercel/static-build"
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
     }
   ],
   "routes": [
@@ -16,12 +19,19 @@
       "dest": "BACKEND/index.js"
     },
     {
+      "src": "/assets/(.*)",
+      "headers": {
+        "cache-control": "s-maxage=31536000, immutable"
+      },
+      "dest": "FRONTEND/dist/assets/$1"
+    },
+    {
       "src": "/(.*)",
       "handle": "filesystem"
     },
     {
       "src": "/(.*)",
-      "dest": "/index.html"
+      "dest": "FRONTEND/dist/index.html"
     }
   ]
 }
