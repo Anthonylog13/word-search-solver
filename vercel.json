@@ -7,10 +7,7 @@
     },
     {
       "src": "FRONTEND/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist"
-      }
+      "use": "@vercel/static-build"
     }
   ],
   "routes": [
@@ -20,7 +17,11 @@
     },
     {
       "src": "/(.*)",
-      "dest": "FRONTEND/dist/$1"
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
   ]
 }
