@@ -8,7 +8,14 @@ const app = express();
 const routerSearch = require("./Search/Router/apiRouter.js");
 
 
-app.use(cors());
+app.use(cors({
+    origin: [
+        'http://localhost:3000',
+        'https://word-search-solver-2j9cd5kqo-anthonys-projects-22a4faf7.vercel.app',
+        'https://TU-DOMINIO-FRONTEND.vercel.app'
+    ],
+    credentials: true
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/api', routerSearch);
